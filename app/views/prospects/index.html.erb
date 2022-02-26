@@ -1,4 +1,43 @@
 <h1>Bienvenido</h1>
-<h2>Prospectos: <%= @prospects_quantity %></h2>
-<h2>Interesados: <%= @interested_quantity %></h2>
-<h2>Clientes: <%= @clients_quantity %></h2>
+
+<ul class="nav">
+  <li class="">
+    <p>Prospectos: <%= @prospects_quantity %></p>
+  </li>
+  <li class="mx-5">
+    <p>Interesados: <%= @interested_quantity %></p>
+  </li>
+  <li class="">
+    <p>Clientes: <%= @clients_quantity %></p>
+  </li>
+</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>Status</th>
+      <th>Ingresado por</th>
+      <th>Fecha de Ingreso</th>
+      <th>Conversaciones</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @list_prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.email %></td>
+        <td><%= "#{prospect.first_name} #{prospect.last_name}" %></td>
+        <td><%= prospect.phone %></td>
+        <td><%= prospect.status %></td>
+        <td><%= prospect.user.email %></td>
+        <td><%= prospect.created_at %></td>
+        <td>Pendiente..</td>
+        <td>Opciones....</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
