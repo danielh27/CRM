@@ -6,4 +6,8 @@ class ProspectsController < ApplicationController
 
     @list_prospects = Prospect.all
   end
+
+  def new
+    @prospect = Prospect.new
+  end
 end
