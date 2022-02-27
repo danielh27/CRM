@@ -33,7 +33,7 @@
         <td><%= prospect.email %></td>
         <td><%= "#{prospect.first_name} #{prospect.last_name}" %></td>
         <td><%= prospect.phone %></td>
-        <td><%= prospect.status %></td>
+        <td><%= prospect.status.capitalize %></td>
         <td><%= prospect.user.email %></td>
         <td><%= prospect.created_at.strftime("%d/%m/%Y") %></td>
         <td>Pendiente..</td>

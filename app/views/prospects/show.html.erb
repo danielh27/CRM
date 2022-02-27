@@ -1,0 +1,20 @@
+<h2>Nombre: <%= "#{@prospect.first_name} #{@prospect.last_name}" %></h1>
+<h3>Status: <%= @prospect.status.capitalize %></h3>
+<h3>Telefono: <%= @prospect.phone %></h3>
+<h3>Correo: <%= @prospect.email %></h3>
+
+<% if @conversation.present? %>
+  <% @conversations.each do |conversation| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          Fecha: <%= conversation.created_at.strftime("%d/%m/%Y") %>
+        </h5>
+        <p class="card-text"><%= conversation.content %></p>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+  <h3>No hay conversaciones disponibles</h3>
+<% end %>
