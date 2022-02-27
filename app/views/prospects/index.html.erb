@@ -82,7 +82,15 @@
           <td><%= prospect.email %></td>
           <td><%= "#{prospect.first_name} #{prospect.last_name}" %></td>
           <td><%= prospect.phone %></td>
-          <td><%= prospect.status.capitalize %></td>
+          <td>
+            <%if prospect.status == 'prospect' %>
+              Prospecto
+            <% elsif prospect.status == 'interested' %>
+              Interesado
+            <% else %>
+              Cliente
+            <% end %>
+          </td>
           <td class="text-center"><%= prospect.user.email %></td>
           <td class="text-center"><%= prospect.created_at.strftime("%d/%m/%Y") %></td>
           <td class="text-center"><%= prospect.conversations.count %> <i class="small fas fa-comment text-comments-color"></i></i></td>
