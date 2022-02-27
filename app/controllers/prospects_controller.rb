@@ -15,6 +15,7 @@ class ProspectsController < ApplicationController
 
   def show
     @conversations = @prospect.conversations
+    @new_conversation = Conversation.new
   end
 
   def edit

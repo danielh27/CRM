@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   end
 
   resources :prospects, only: %i[index new create show edit update]
+
+  resources :prospects, only: [:show] do
+    resources :conversations, only: [:create]
+  end
 end

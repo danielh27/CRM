@@ -3,7 +3,7 @@
 <h3>Telefono: <%= @prospect.phone %></h3>
 <h3>Correo: <%= @prospect.email %></h3>
 
-<% if @conversation.present? %>
+<% if @conversations.present? %>
   <% @conversations.each do |conversation| %>
     <div class="card">
       <div class="card-body">
@@ -17,4 +17,9 @@
 
 <% else %>
   <h3>No hay conversaciones disponibles</h3>
+<% end %>
+
+<%= simple_form_for [@prospect, @new_conversation] do |f| %>
+  <%= f.input :content, label: "Contenido" %>
+  <%= f.submit %>
 <% end %>

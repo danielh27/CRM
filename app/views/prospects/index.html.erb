@@ -36,7 +36,7 @@
         <td><%= prospect.status.capitalize %></td>
         <td><%= prospect.user.email %></td>
         <td><%= prospect.created_at.strftime("%d/%m/%Y") %></td>
-        <td>Pendiente..</td>
+        <td><%= prospect.conversations.count %></td>
         <td>
           <%= link_to "Ver", prospect_path(prospect) %>
           <%= link_to "Editar", edit_prospect_path(prospect) %>
