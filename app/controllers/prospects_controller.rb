@@ -11,6 +11,21 @@ class ProspectsController < ApplicationController
     @prospect = Prospect.new
   end
 
+  def edit
+    @prospect = Prospect.find(params[:id])
+    render :new
+  end
+
+  def update
+    prospect = Prospect.find(params[:id])
+
+    if prospect.update(prospect_params)
+      redirect_to prospects_path
+    else
+      render :new
+    end
+  end
+
   def create
     prospect = Prospect.new(prospect_params)
     prospect.user = current_user

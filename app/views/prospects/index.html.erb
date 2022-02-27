@@ -37,7 +37,10 @@
         <td><%= prospect.user.email %></td>
         <td><%= prospect.created_at.strftime("%d/%m/%Y") %></td>
         <td>Pendiente..</td>
-        <td>Opciones....</td>
+        <td>
+          <%= link_to "Ver", prospect_path(prospect) %>
+          <%= link_to "Editar", edit_prospect_path(prospect) %>
+        </td>
       </tr>
     <% end %>
   </tbody>

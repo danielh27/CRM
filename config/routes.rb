@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     root to: 'devise/sessions#new'
   end
 
-  resources :prospects, only: %i[index new create]
+  resources :prospects, only: %i[index new create show edit update]
 end

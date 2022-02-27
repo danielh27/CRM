@@ -1,0 +1,8 @@
+<%= simple_form_for @prospect do |f| %>
+  <%= f.input :first_name, label: "Nombre" %>
+  <%= f.input :last_name, label: "Apellido" %>
+  <%= f.input :email, label: "Correo" %>
+  <%= f.input :phone, label: "Telefono"  %>
+  <%= f.input :status, collection: Prospect::STATUS, prompt: "Selecciona un status" %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
