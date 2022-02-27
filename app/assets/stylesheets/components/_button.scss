@@ -2,6 +2,23 @@
   background-color: rgb(35, 209, 157);
 }
 
+.bg-cyan {
+  background-color: #00B6A2;
+}
+
 .text-green {
   color: #23d19d;
+}
+
+.text-comments-color {
+  color: #31353367;
+}
+.new-prospect-btn {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #009b89;
+  }
 }
