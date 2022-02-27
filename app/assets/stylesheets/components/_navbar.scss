@@ -1,12 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(255, 255, 255);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.10);
+}
+
+.navbar-lewagon .container-fluid {
+  padding: 0 2.5rem;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand i {
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.699) !important;
+
+  &:hover {
+    color: rgb(35, 209, 157) !important;
+  }
+}
+
+.logo-name {
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
