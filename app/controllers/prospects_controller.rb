@@ -6,7 +6,7 @@ class ProspectsController < ApplicationController
     @interested_quantity = Prospect.where(status: 'interested').count
     @clients_quantity = Prospect.where(status: 'client').count
 
-    @list_prospects = Prospect.all.includes(:user)
+    @list_prospects = Prospect.includes(:user).order(created_at: :desc)
   end
 
   def new
