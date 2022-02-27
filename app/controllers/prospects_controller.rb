@@ -1,5 +1,5 @@
 class ProspectsController < ApplicationController
-  before_action :set_prospect, only: %i[edit update show]
+  before_action :set_prospect, only: %i[edit update show destroy]
 
   def index
     @prospects_quantity = Prospect.where(status: 'prospect').count
@@ -39,6 +39,11 @@ class ProspectsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @prospect.destroy
+    redirect_to prospects_path
   end
 
   private

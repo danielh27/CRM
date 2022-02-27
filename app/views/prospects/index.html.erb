@@ -40,6 +40,7 @@
         <td>
           <%= link_to "Ver", prospect_path(prospect) %>
           <%= link_to "Editar", edit_prospect_path(prospect) %>
+          <%= link_to "Eliminar", prospect_path(prospect), method: 'delete' %>
         </td>
       </tr>
     <% end %>
