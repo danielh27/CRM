@@ -1,0 +1,40 @@
+.info-card {
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+.info-card .card-body {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.border-left-cyan {
+  border-left: 0.25rem solid #00B6A2;
+}
+
+.text-cyan {
+  color: #00B6A2;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.info-card-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.text-gray-800 {
+  color: #5a5c69;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-gray-300 {
+  color: #bbbcc2;
+}

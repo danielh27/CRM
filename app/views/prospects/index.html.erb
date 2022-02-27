@@ -1,48 +1,97 @@
-<h1>Bienvenido</h1>
-<%= link_to "Ingresar prospecto", new_prospect_path, class: "text-decoration-none"  %>
+<div class="container mt-4">
 
-<ul class="nav">
-  <li class="">
-    <p>Prospectos: <%= @prospects_quantity %></p>
-  </li>
-  <li class="mx-5">
-    <p>Interesados: <%= @interested_quantity %></p>
-  </li>
-  <li class="">
-    <p>Clientes: <%= @clients_quantity %></p>
-  </li>
-</ul>
+  <div class="row justify-content-between">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Nombre</th>
-      <th>Telefono</th>
-      <th>Status</th>
-      <th>Ingresado por</th>
-      <th>Fecha de Ingreso</th>
-      <th>Conversaciones</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card info-card border-left-cyan shadow-sm h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="info-card-title text-uppercase text-cyan mb-1">
+                  Prospectos
+              </div>
+              <div class="h5 mb-0 text-gray-800"><%= @prospects_quantity %></div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-user-alt fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <tbody>
-    <% @list_prospects.each do |prospect| %>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card info-card border-left-cyan shadow-sm h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="info-card-title text-uppercase text-cyan mb-1">
+                  Interesados
+              </div>
+              <div class="h5 mb-0 text-gray-800"><%= @interested_quantity %></div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-user-tag fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card info-card border-left-cyan shadow-sm h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="info-card-title text-uppercase text-cyan mb-1">
+                  Clientes
+              </div>
+              <div class="mb-0 text-gray-800"><%= @clients_quantity %></div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-user-tie fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <%= link_to "Ingresar prospecto", new_prospect_path, class: "btn text-white bg-green rounded"  %>
+
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= prospect.email %></td>
-        <td><%= "#{prospect.first_name} #{prospect.last_name}" %></td>
-        <td><%= prospect.phone %></td>
-        <td><%= prospect.status.capitalize %></td>
-        <td><%= prospect.user.email %></td>
-        <td><%= prospect.created_at.strftime("%d/%m/%Y") %></td>
-        <td><%= prospect.conversations.count %></td>
-        <td>
-          <%= link_to "Ver", prospect_path(prospect) %>
-          <%= link_to "Editar", edit_prospect_path(prospect) %>
-          <%= link_to "Eliminar", prospect_path(prospect), method: 'delete' %>
-        </td>
+        <th>Email</th>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Status</th>
+        <th>Ingresado por</th>
+        <th>Fecha de Ingreso</th>
+        <th>Conversaciones</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @list_prospects.each do |prospect| %>
+        <tr>
+          <td><%= prospect.email %></td>
+          <td><%= "#{prospect.first_name} #{prospect.last_name}" %></td>
+          <td><%= prospect.phone %></td>
+          <td><%= prospect.status.capitalize %></td>
+          <td><%= prospect.user.email %></td>
+          <td><%= prospect.created_at.strftime("%d/%m/%Y") %></td>
+          <td><%= prospect.conversations.count %></td>
+          <td>
+            <%= link_to "Ver", prospect_path(prospect) %>
+            <%= link_to "Editar", edit_prospect_path(prospect) %>
+            <%= link_to "Eliminar", prospect_path(prospect), method: 'delete' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
