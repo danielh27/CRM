@@ -1,6 +1,6 @@
 <div class="container form-session-container">
   <div class="bg-white rounder p-5 w-75 shadow-sm">
-    <h2><strong> Nuevo prospecto</strong></h2>
+    <h2><strong> Editar prospecto</strong></h2>
     <%= simple_form_for @prospect do |f| %>
       <%= f.input :first_name, label: "Nombre", placeholder: "John" %>
       <%= f.input :last_name, label: "Apellido", placeholder: "Doe" %>
@@ -8,7 +8,7 @@
       <%= f.input :phone, label: "Telefono", placeholder: "+51 123 456 789"  %>
       <%= f.input :status, collection: [['Prospecto', 'prospect'], ['Interesado', 'interested'], ['Cliente', 'client']], prompt: "Selecciona una opcion" %>
       <div class="form-actions text-center mt-5">
-        <%= f.submit value: "Añadir prospecto", class: "btn bg-cyan text-white" %>
+        <%= f.submit value: "Actualizar prospecto", class: "btn bg-cyan text-white" %>
       </div>
     <% end %>
   </div>
