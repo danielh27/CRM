@@ -1,25 +1,44 @@
-<h2>Nombre: <%= "#{@prospect.first_name} #{@prospect.last_name}" %></h1>
-<h3>Status: <%= @prospect.status.capitalize %></h3>
-<h3>Telefono: <%= @prospect.phone %></h3>
-<h3>Correo: <%= @prospect.email %></h3>
+<div class="container mt-4 prospect-info-container">
 
-<% if @conversations.present? %>
-  <% @conversations.each do |conversation| %>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          Fecha: <%= conversation.created_at.strftime("%d/%m/%Y") %>
-        </h5>
-        <p class="card-text"><%= conversation.content %></p>
-      </div>
-    </div>
-  <% end %>
+  <p class="text-gray-subtitle"><span class="subtitle">Nombre: </span> <%= "#{@prospect.first_name} #{@prospect.last_name}" %></p>
+  <p class="text-gray-subtitle"><span class="subtitle">Status: </span>
+    <%if @prospect.status == 'prospect' %>
+      Prospecto
+    <% elsif @prospect.status == 'interested' %>
+      Interesado
+    <% else %>
+      Cliente
+    <% end %>
+  </p>
 
-<% else %>
-  <h3>No hay conversaciones disponibles</h3>
-<% end %>
+  <p class="text-gray-subtitle"><span class="subtitle">Telefono: </span> <%= @prospect.phone %></p>
+  <p class="text-gray-subtitle"><span class="subtitle">Correo: </span> <%= @prospect.email %></p>
 
-<%= simple_form_for [@prospect, @new_conversation] do |f| %>
-  <%= f.input :content, label: "Contenido" %>
-  <%= f.submit %>
-<% end %>
+  <div class="conversations-section mt-5">
+    <% if @conversations.present? %>
+      <% @conversations.each do |conversation| %>
+        <div class="card conversation-card">
+          <div class="card-body">
+            <h5 class="card-title">
+              Fecha: <%= conversation.created_at.strftime("%d/%m/%Y") %>
+            </h5>
+            <p class="card-text"><%= conversation.content %></p>
+          </div>
+        </div>
+      <% end %>
+
+    <% else %>
+      <p class="text-gray-800">No hay conversaciones disponibles</p>
+    <% end %>
+  </div>
+
+  <div class="mt-5">
+    <p class="text-gray-subtitle subtitle">Agrega una conversacion</p>
+    <%= simple_form_for [@prospect, @new_conversation] do |f| %>
+      <%= f.input :content, label: "Contenido", label_html: { class: "text-gray-subtitle" } %>
+      <%= f.submit value: "Agregar", class: "btn bg-cyan text-white" %>
+    <% end %>
+  </div>
+
+
+</div>

@@ -35,6 +35,39 @@
   font-family: 'Lato', sans-serif;
 }
 
+.text-gray-subtitle {
+  color: #5a5c69;
+}
+
 .text-gray-300 {
   color: #bbbcc2;
+}
+
+.prospect-info-container {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+}
+
+.prospect-info-container textarea {
+  background-color: white;
+  border-radius: 7px;
+}
+
+.conversation-card {
+  font-family: 'Lato', sans-serif;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.conversation-card .card-title {
+  font-size: 1rem;
+}
+
+.conversations-section {
+  max-height: 385px;
+  overflow-y: auto;
+}
+
+.subtitle {
+  font-weight: 600;
 }
